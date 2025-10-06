@@ -1,0 +1,43 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-main-content {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center; /* Horizontally centers content */
+  align-items: center;   /* Vertically centers content */
+  padding: 20px;
+}
+
+/* YOUR EXISTING HEADER STYLES */
+.page-header {
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.main-title {
+  margin: 0;
+  font-size: 32px;
+  color: #fff;
+  font-weight: 700;
+  text-shadow: 0 0 8px #ff00ff, 0 0 12px #00ffff;
+}
+
+.subtitle {
+  margin: 5px 0 20px 0;
+  font-size: 16px;
+  color: #cfeff3;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+.quote {
+  margin: 0;
+  font-style: italic;
+  color: #00ffff;
+  text-shadow: 0 0 5px #00ffff;
+  opacity: 0.9;
+}

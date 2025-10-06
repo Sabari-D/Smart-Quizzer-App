@@ -1,0 +1,122 @@
+<!-- <div class="quiz-container">
+  <div class="quiz-card">
+    <h2 class="quiz-title">Quiz in Progress</h2>
+    
+    <div *ngIf="quizCompleted">
+        <h3 class="status-message success">Quiz Submitted!</h3>
+        <p>Redirecting to Quiz History...</p>
+    </div>
+
+    <div *ngIf="!quizCompleted && quizQuestions.length > 0">
+      <div class="progress">
+        Question {{ currentQuestionIndex + 1 }} of {{ quizQuestions.length }}
+      </div>
+
+      <div class="question-display">
+        <p class="question-text">{{ quizQuestions[currentQuestionIndex].question }}</p>
+
+        <div *ngIf="quizQuestions[currentQuestionIndex].type === 'mcq'" class="options-group">
+          <div *ngFor="let option of quizQuestions[currentQuestionIndex].options; let i = index" class="option-item">
+            <input 
+              type="radio" 
+              [id]="'option-' + i" 
+              [value]="option" 
+              name="answer-option" 
+              [(ngModel)]="selectedOption">
+            <label [for]="'option-' + i">{{ option }}</label>
+          </div>
+        </div>
+
+        <div *ngIf="quizQuestions[currentQuestionIndex].type !== 'mcq'" class="input-answer-group">
+          <label for="user-input-answer">Your Answer:</label>
+          <textarea 
+            id="user-input-answer" 
+            rows="3"
+            [(ngModel)]="quizQuestions[currentQuestionIndex].userAnswer" 
+            placeholder="Type your answer here..."
+            required></textarea>
+        </div>
+      </div>
+
+      <button 
+        class="action-btn next-btn" 
+        (click)="nextQuestion()"
+        [disabled]="!quizQuestions[currentQuestionIndex].userAnswer && quizQuestions[currentQuestionIndex].type !== 'mcq' && !selectedOption">
+        {{ currentQuestionIndex < quizQuestions.length - 1 ? 'Next Question' : 'Finish Quiz' }}
+      </button>
+    </div>
+  </div>
+</div> -->
+
+
+<div class="quiz-container">
+    <div class="quiz-card">
+        <h2 class="quiz-title">Quiz in Progress</h2>
+        
+        <div *ngIf="quizCompleted">
+            <h3 class="status-message success">Quiz Submitted!</h3>
+            <p>Redirecting to Quiz History...</p>
+        </div>
+
+        <div *ngIf="!quizCompleted && quizQuestions.length > 0">
+            <div class="progress">
+                Question {{ currentQuestionIndex + 1 }} of {{ quizQuestions.length }}
+            </div>
+
+            <div class="question-display">
+                <p class="question-text">{{ quizQuestions[currentQuestionIndex].question }}</p>
+
+                <div *ngIf="quizQuestions[currentQuestionIndex].type === 'mcq'" class="options-group">
+                    <div *ngFor="let option of quizQuestions[currentQuestionIndex].options; let i = index" class="option-item">
+                        <input type="radio" [id]="'mcq-option-' + i" [value]="option" [name]="'answer-mcq-' + currentQuestionIndex" [(ngModel)]="selectedOption">
+                        <label [for]="'mcq-option-' + i" class="option-label">{{ option }}</label>
+                    </div>
+                </div>
+
+                <div *ngIf="quizQuestions[currentQuestionIndex].type === 'true_false'" class="options-group true-false-group">
+                    <div class="option-item">
+                        <input type="radio" id="tf-true" value="True" [name]="'answer-tf-' + currentQuestionIndex" [(ngModel)]="selectedOption">
+                        <label for="tf-true" class="option-label">True</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="tf-false" value="False" [name]="'answer-tf-' + currentQuestionIndex" [(ngModel)]="selectedOption">
+                        <label for="tf-false" class="option-label">False</label>
+                    </div>
+                </div>
+
+                <div *ngIf="quizQuestions[currentQuestionIndex].type === 'multi_select'" class="options-group multi-select-group">
+                    <label for="multi-select-options" class="multi-select-label">Select all correct options:</label>
+                    <div *ngFor="let option of quizQuestions[currentQuestionIndex].options; let i = index" class="option-item checkbox-item">
+                        <input 
+                            type="checkbox" 
+                            [id]="'multi-option-' + i" 
+                            [value]="option" 
+                            [checked]="checkedOptions.includes(option)"
+                            (change)="toggleCheckbox(option)">
+                        <label [for]="'multi-option-' + i" class="option-label">{{ option }}</label>
+                    </div>
+                </div>
+                
+                <div *ngIf="quizQuestions[currentQuestionIndex].type === 'fill_blank'" class="input-answer-group">
+                    <label for="user-input-answer">Your Answer:</label>
+                    <textarea 
+                      id="user-input-answer" 
+                      rows="2"
+                      [(ngModel)]="quizQuestions[currentQuestionIndex].userAnswer" 
+                      placeholder="Type your word or phrase here..."
+                      required></textarea>
+                </div>
+            </div>
+
+            <button 
+    class="action-btn next-btn" 
+    (click)="nextQuestion()"
+    
+    [disabled]="(quizQuestions[currentQuestionIndex].type === 'multi_select') 
+                ? (checkedOptions.length === 0) 
+                : (!selectedOption && !quizQuestions[currentQuestionIndex].userAnswer)">
+    {{ currentQuestionIndex < quizQuestions.length - 1 ? 'Next Question' : 'Finish Quiz' }}
+</button>
+        </div>
+    </div>
+</div>

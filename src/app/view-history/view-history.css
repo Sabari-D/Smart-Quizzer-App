@@ -1,0 +1,642 @@
+.view-history-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+/* Neon Glow Effects */
+.neon-glow {
+  text-shadow: 
+    0 0 5px currentColor,
+    0 0 10px currentColor,
+    0 0 15px currentColor,
+    0 0 20px currentColor;
+}
+
+.neon-border {
+  box-shadow: 
+    0 0 5px currentColor,
+    0 0 10px currentColor,
+    inset 0 0 5px currentColor;
+}
+
+/* Header Section with Neon */
+.header-section {
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+  padding: 20px;
+  background: rgba(15, 15, 35, 0.8);
+  border-radius: 15px;
+  border: 1px solid #00ffff;
+  animation: neonPulse 2s infinite alternate;
+}
+
+.header-section h1 {
+  font-size: 2.5em;
+  margin: 0 0 10px 0;
+  color: #00ffff;
+  text-shadow: 
+    0 0 10px #00ffff,
+    0 0 20px #00ffff,
+    0 0 30px #00ffff;
+  animation: textGlow 3s ease-in-out infinite alternate;
+}
+
+.username {
+  color: #ff00ff;
+  font-style: italic;
+  text-shadow: 0 0 10px #ff00ff;
+}
+
+/* Back Button with Neon */
+.btn-back {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  background: transparent;
+  color: #ff00ff;
+  border: 2px solid #ff00ff;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 5px #ff00ff;
+  box-shadow: 
+    0 0 10px #ff00ff,
+    inset 0 0 10px rgba(255, 0, 255, 0.1);
+}
+
+.btn-back:hover {
+  background: #ff00ff;
+  color: #0f0f23;
+  box-shadow: 
+    0 0 20px #ff00ff,
+    0 0 30px #ff00ff,
+    inset 0 0 20px rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Stats Grid with Neon Cards */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.stat-card {
+  background: rgba(15, 15, 35, 0.7);
+  border-radius: 15px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid transparent;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00, #ff00ff);
+  z-index: -1;
+  border-radius: 16px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.stat-card:hover::before {
+  opacity: 1;
+  animation: borderRotate 3s linear infinite;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 
+    0 10px 30px rgba(0, 255, 255, 0.3),
+    0 0 20px rgba(255, 0, 255, 0.2);
+}
+
+.stat-card.total-quizzes {
+  border-color: #00ffff;
+  box-shadow: 
+    0 0 15px rgba(0, 255, 255, 0.3),
+    inset 0 0 15px rgba(0, 255, 255, 0.1);
+}
+
+.stat-card.average-score {
+  border-color: #ffff00;
+  box-shadow: 
+    0 0 15px rgba(255, 255, 0, 0.3),
+    inset 0 0 15px rgba(255, 255, 0, 0.1);
+}
+
+.stat-card.performance-trend.improving {
+  border-color: #00ff00;
+  box-shadow: 
+    0 0 15px rgba(0, 255, 0, 0.3),
+    inset 0 0 15px rgba(0, 255, 0, 0.1);
+}
+
+.stat-card.performance-trend.declining {
+  border-color: #ff0000;
+  box-shadow: 
+    0 0 15px rgba(255, 0, 0, 0.3),
+    inset 0 0 15px rgba(255, 0, 0, 0.1);
+}
+
+.stat-card.performance-trend.stable {
+  border-color: #ffa500;
+  box-shadow: 
+    0 0 15px rgba(255, 165, 0, 0.3),
+    inset 0 0 15px rgba(255, 165, 0, 0.1);
+}
+
+.stat-icon {
+  font-size: 3em;
+  filter: drop-shadow(0 0 10px currentColor);
+}
+
+.stat-content h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.1em;
+  color: #cccccc;
+}
+
+.stat-number {
+  font-size: 2.2em;
+  font-weight: bold;
+  margin: 8px 0;
+  text-shadow: 0 0 10px currentColor;
+}
+
+.stat-card.total-quizzes .stat-number {
+  color: #00ffff;
+}
+
+.stat-card.average-score .stat-number {
+  color: #ffff00;
+}
+
+.stat-card.performance-trend.improving .stat-number {
+  color: #00ff00;
+}
+
+.stat-card.performance-trend.declining .stat-number {
+  color: #ff0000;
+}
+
+.stat-card.performance-trend.stable .stat-number {
+  color: #ffa500;
+}
+
+.stat-content p {
+  margin: 0;
+  color: #888888;
+  font-size: 0.9em;
+}
+
+/* Motivational Section with Neon */
+.motivational-section {
+  background: rgba(15, 15, 35, 0.8);
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.motivational-section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 255, 255, 0.2);
+}
+
+.motivational-section.improving {
+  border-color: #00ff00;
+  box-shadow: 
+    0 0 20px rgba(0, 255, 0, 0.2),
+    inset 0 0 20px rgba(0, 255, 0, 0.05);
+}
+
+.motivational-section.declining {
+  border-color: #ff0000;
+  box-shadow: 
+    0 0 20px rgba(255, 0, 0, 0.2),
+    inset 0 0 20px rgba(255, 0, 0, 0.05);
+}
+
+.motivational-section.stable {
+  border-color: #ffa500;
+  box-shadow: 
+    0 0 20px rgba(255, 165, 0, 0.2),
+    inset 0 0 20px rgba(255, 165, 0, 0.05);
+}
+
+.quote-icon {
+  font-size: 2.5em;
+  filter: drop-shadow(0 0 10px currentColor);
+}
+
+.motivational-section.improving .quote-icon {
+  color: #00ff00;
+}
+
+.motivational-section.declining .quote-icon {
+  color: #ff0000;
+}
+
+.motivational-section.stable .quote-icon {
+  color: #ffa500;
+}
+
+.quote-content h3 {
+  margin: 0 0 15px 0;
+  color: #ffffff;
+  font-size: 1.4em;
+  text-shadow: 0 0 10px #ffffff;
+}
+
+.motivational-quote {
+  font-size: 1.2em;
+  font-style: italic;
+  color: #cccccc;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  text-shadow: 0 0 5px #cccccc;
+}
+
+.performance-tips {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+}
+
+.performance-tips strong {
+  color: #00ffff;
+  text-shadow: 0 0 5px #00ffff;
+}
+
+.performance-tips ul {
+  margin: 15px 0 0 0;
+  padding-left: 20px;
+}
+
+.performance-tips li {
+  margin-bottom: 8px;
+  color: #aaaaaa;
+  line-height: 1.5;
+}
+
+/* Detailed History Section */
+.detailed-history {
+  background: rgba(15, 15, 35, 0.8);
+  border-radius: 15px;
+  padding: 30px;
+  border: 1px solid #00ffff;
+  box-shadow: 
+    0 0 20px rgba(0, 255, 255, 0.2),
+    inset 0 0 20px rgba(0, 255, 255, 0.05);
+}
+
+.detailed-history h2 {
+  color: #00ffff;
+  text-shadow: 
+    0 0 10px #00ffff,
+    0 0 20px #00ffff;
+  margin-bottom: 25px;
+  font-size: 2em;
+  animation: textGlow 3s ease-in-out infinite alternate;
+}
+
+/* History Records with Neon */
+.history-record {
+  background: rgba(26, 26, 46, 0.6);
+  border: 1px solid #ff00ff;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.history-record::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.history-record:hover::before {
+  left: 100%;
+}
+
+.history-record:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    0 8px 25px rgba(255, 0, 255, 0.3),
+    0 0 15px rgba(255, 0, 255, 0.2);
+  border-color: #ffff00;
+}
+
+.record-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.record-main h3 {
+  margin: 0 0 10px 0;
+  color: #ffffff;
+  font-size: 1.4em;
+  text-shadow: 0 0 10px #ffffff;
+}
+
+/* Difficulty Badges with Neon */
+.difficulty-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 1px solid;
+  text-shadow: 0 0 5px currentColor;
+}
+
+.difficulty-badge.beginner {
+  background: rgba(0, 255, 255, 0.1);
+  color: #00ffff;
+  border-color: #00ffff;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+.difficulty-badge.intermediate {
+  background: rgba(255, 255, 0, 0.1);
+  color: #ffff00;
+  border-color: #ffff00;
+  box-shadow: 0 0 10px rgba(255, 255, 0, 0.3);
+}
+
+.difficulty-badge.advanced {
+  background: rgba(255, 0, 0, 0.1);
+  color: #ff0000;
+  border-color: #ff0000;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+}
+
+.record-score {
+  text-align: right;
+}
+
+.record-score .score {
+  display: block;
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #00ff00;
+  text-shadow: 
+    0 0 10px #00ff00,
+    0 0 20px #00ff00;
+}
+
+.record-score .percentage {
+  font-size: 1em;
+  color: #cccccc;
+  text-shadow: 0 0 5px #cccccc;
+}
+
+.record-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.record-date {
+  color: #aaaaaa;
+  font-size: 0.95em;
+}
+
+/* Buttons with Neon Effects */
+.btn-details {
+  background: transparent;
+  color: #ff00ff;
+  border: 2px solid #ff00ff;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 0.95em;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 5px #ff00ff;
+  box-shadow: 
+    0 0 10px #ff00ff,
+    inset 0 0 10px rgba(255, 0, 255, 0.1);
+}
+
+.btn-details:hover {
+  background: #ff00ff;
+  color: #0f0f23;
+  box-shadow: 
+    0 0 20px #ff00ff,
+    0 0 30px #ff00ff,
+    inset 0 0 20px rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: transparent;
+  color: #00ffff;
+  border: 2px solid #00ffff;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 25px;
+  display: inline-block;
+  margin-top: 15px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 5px #00ffff;
+  box-shadow: 
+    0 0 10px #00ffff,
+    inset 0 0 10px rgba(0, 255, 255, 0.1);
+}
+
+.btn-primary:hover {
+  background: #00ffff;
+  color: #0f0f23;
+  box-shadow: 
+    0 0 20px #00ffff,
+    0 0 30px #00ffff,
+    inset 0 0 20px rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Loading and Error States */
+.loading-section {
+  text-align: center;
+  padding: 60px;
+}
+
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-top: 4px solid #00ffff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1.5s linear infinite, neonPulse 2s infinite alternate;
+  margin: 0 auto 25px;
+  box-shadow: 0 0 20px #00ffff;
+}
+
+.error-section {
+  text-align: center;
+  padding: 60px;
+}
+
+.error-message {
+  background: rgba(255, 0, 0, 0.1);
+  color: #ff0000;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  border: 1px solid #ff0000;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+  text-shadow: 0 0 5px #ff0000;
+}
+
+.btn-retry {
+  background: transparent;
+  color: #ff0000;
+  border: 2px solid #ff0000;
+  padding: 12px 24px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 5px #ff0000;
+  box-shadow: 
+    0 0 10px #ff0000,
+    inset 0 0 10px rgba(255, 0, 0, 0.1);
+}
+
+.btn-retry:hover {
+  background: #ff0000;
+  color: #0f0f23;
+  box-shadow: 
+    0 0 20px #ff0000,
+    0 0 30px #ff0000,
+    inset 0 0 20px rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.no-history {
+  text-align: center;
+  padding: 50px;
+  color: #cccccc;
+}
+
+/* Animations */
+@keyframes neonPulse {
+  0% {
+    box-shadow: 
+      0 0 5px currentColor,
+      0 0 10px currentColor,
+      inset 0 0 5px currentColor;
+  }
+  100% {
+    box-shadow: 
+      0 0 15px currentColor,
+      0 0 25px currentColor,
+      0 0 35px currentColor,
+      inset 0 0 10px currentColor;
+  }
+}
+
+@keyframes textGlow {
+  0% {
+    text-shadow: 
+      0 0 10px currentColor,
+      0 0 20px currentColor;
+  }
+  100% {
+    text-shadow: 
+      0 0 20px currentColor,
+      0 0 30px currentColor,
+      0 0 40px currentColor;
+  }
+}
+
+@keyframes borderRotate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .record-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .record-score {
+    text-align: left;
+    margin-top: 15px;
+  }
+  
+  .record-details {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .btn-back {
+    position: relative;
+    left: 0;
+    top: 0;
+    margin-bottom: 20px;
+  }
+  
+  .header-section {
+    padding: 20px 15px;
+  }
+  
+  .header-section h1 {
+    font-size: 2em;
+  }
+}

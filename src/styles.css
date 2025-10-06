@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+/* Global Styles */
+/* 1. Import the Google Font (Example: Roboto) */
+/* 1. Import the Montserrat font from Google Fonts */
+/* WARNING: 'Product Sans' is not a public font. 
+This assumes you have locally hosted the font files and defined 
+@font-face rules for a font named 'Product Sans' or 'Google Sans'.
+*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+html, body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #090022; 
+    color: #E0FFFF; 
+}

@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #000428, #004e92);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+/* Container */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Card */
+.login-card {
+  width: 400px;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #0ff, 0 0 40px #0ff;
+  text-align: center;
+  animation: neon-glow 2s infinite alternate;
+}
+
+/* Neon glow animation */
+@keyframes neon-glow {
+  from {
+    box-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+  }
+  to {
+    box-shadow: 0 0 20px #0ff, 0 0 40px #0ff, 0 0 60px #0ff;
+  }
+}
+
+/* Title */
+.title {
+  font-size: 26px;
+  font-weight: 600;
+  color: #0ff;
+  margin-bottom: 25px;
+  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+  animation: neon-text 1.5s infinite alternate;
+}
+
+/* Neon title animation */
+@keyframes neon-text {
+  from {
+    text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+  }
+  to {
+    text-shadow: 0 0 20px #0ff, 0 0 40px #0ff, 0 0 60px #0ff;
+  }
+}
+
+/* Input Group */
+.input-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* Labels */
+.input-group label {
+  display: block;
+  margin-bottom: 6px;
+  color: #0ff;
+  font-weight: 500;
+}
+
+/* Inputs */
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #0ff;
+  background: transparent;
+  color: #fff;
+  font-size: 15px;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.3s ease;
+  box-shadow: 0 0 5px #0ff;
+}
+
+/* Input focus effect */
+.input-group input:focus {
+  border-color: #fff;
+  box-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+}
+
+/* Note */
+.note {
+  font-size: 13px;
+  color: #ccc;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Error Message */
+.error-message {
+  color: #ff4d4d;
+  font-size: 14px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Login Button */
+.action-btn.login-btn {
+  width: 100%;
+  padding: 12px;
+  background: #0ff;
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.action-btn.login-btn:hover {
+  background: #00e6e6;
+  box-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+}
+
+/* Disabled Button */
+.action-btn.login-btn:disabled {
+  background: #444;
+  color: #888;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Forgot Password Link */
+.forgot-link {
+  display: inline-block;
+  margin-top: 15px;
+  color: #0ff;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+.forgot-link:hover {
+  color: #fff;
+  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+}
+
+/* Go Back Link */
+.back-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: #ffcc00;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.back-link:hover {
+  color: #fff;
+  text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00;
+}

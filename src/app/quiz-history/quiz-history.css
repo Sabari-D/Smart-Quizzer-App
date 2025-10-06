@@ -1,0 +1,162 @@
+/* ===============================
+   Overall Page Setup
+=============================== */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #0a0019;
+  color: #fff;
+}
+
+/* ===============================
+   Main Container
+=============================== */
+.history-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+/* ===============================
+   Main History Card
+=============================== */
+.history-card {
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px #00f0ff;
+  width: 90%;
+  max-width: 800px;
+  transition: all 0.3s ease-in-out;
+}
+
+.title {
+  text-align: center;
+  color: #00f7ff;
+  font-size: 2rem;
+  font-weight: 700;
+  text-shadow: 0 0 15px #00f7ff, 0 0 25px #00f7ff;
+  margin-bottom: 30px;
+}
+
+/* ===============================
+   Score Summary
+=============================== */
+.score-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.3rem;
+  margin-bottom: 25px;
+}
+
+.score-text {
+  color: #fff;
+}
+
+.score-value {
+  color: #00fff2;
+  text-shadow: 0 0 8px #00fff2;
+  font-weight: 600;
+}
+
+/* ===============================
+   Question Cards
+=============================== */
+.question-summary {
+  background-color: rgba(10, 10, 10, 0.9);
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  transition: all 0.3s ease-in-out;
+  border: 2px solid transparent;
+  box-shadow: 0 0 15px #00f0ff;
+}
+
+/* Glow colors for correctness */
+.correct-answer {
+  border-color: #00ff99;
+  box-shadow: 0 0 15px #00ff99, 0 0 25px #00ff99 inset;
+}
+
+.incorrect-answer {
+  border-color: #ff0066;
+  box-shadow: 0 0 15px #ff0066, 0 0 25px #ff0066 inset;
+}
+
+/* ===============================
+   Question Title
+=============================== */
+.question-summary h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+}
+
+/* Feedback Emoji */
+.feedback-emoji {
+  margin-left: 10px;
+  font-size: 1.2rem;
+}
+
+/* ===============================
+   Answer Texts
+=============================== */
+.your-answer {
+  color: #00eaff;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.correct-answer-display {
+  color: #ff7b7b;
+  font-weight: 400;
+}
+
+/* ===============================
+   Start New Quiz Button
+=============================== */
+.action-btn {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  margin-top: 30px;
+  padding: 12px 25px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.full-width-btn {
+  width: fit-content;
+  display: block;
+  margin: 0 auto;
+}
+
+.retry-btn {
+  background: #00eaff;
+  color: #000;
+  box-shadow: 0 0 10px #00eaff, 0 0 20px #00eaff inset;
+  border: none;
+}
+
+.retry-btn:hover {
+  background: #00ffcc;
+  box-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc inset;
+  transform: scale(1.05);
+}
+
+/* Add spacing below last element to prevent overflow */
+.history-card {
+  padding-bottom: 50px;
+}

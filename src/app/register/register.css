@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* 🌌 Background */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #000428, #004e92);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+/* 🧭 Center Container */
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* 💫 Card Design */
+.register-card {
+  width: 450px;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #0ff, 0 0 40px #0ff;
+  text-align: center;
+  animation: fadeIn 1.2s ease;
+}
+
+/* ✨ Fade-In Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 🏷️ Title */
+.title {
+  margin-bottom: 25px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #0ff;
+  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+}
+
+/* 🧩 Input Group */
+.input-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* 🔹 Labels */
+.input-group label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #0ff;
+  font-weight: 500;
+  display: block;
+}
+
+/* 🧠 Input Fields */
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #0ff;
+  background: transparent;
+  color: #fff;
+  font-size: 15px;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.3s ease;
+  box-shadow: 0 0 5px #0ff;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ✴️ Focus Effects */
+.input-group input:focus {
+  border-color: #fff;
+  box-shadow: 0 0 15px #0ff, 0 0 30px #0ff;
+}
+
+/* 📝 Note Text */
+.note {
+  font-size: 13px;
+  color: #aaa;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* ⚡ Register Button */
+.action-btn.register-btn {
+  width: 100%;
+  padding: 12px;
+  background: #0ff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #000;
+  font-family: 'Poppins', sans-serif;
+  transition: 0.3s ease;
+  animation: pulseGlow 2s infinite alternate;
+}
+
+/* 💎 Hover Effects */
+.action-btn.register-btn:hover {
+  background: #00e6e6;
+  box-shadow: 0 0 20px #0ff, 0 0 40px #0ff, 0 0 60px #0ff;
+}
+
+/* 🌈 Pulse Animation (Neon Breathing Effect) */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
+    transform: scale(1);
+  }
+  100% {
+    box-shadow: 0 0 25px #00ffff, 0 0 50px #00e6e6, 0 0 75px #00ffff;
+    transform: scale(1.03);
+  }
+}
+
+/* 🔙 Back Link */
+.back-link {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #0ff;
+  text-decoration: none;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.back-link:hover {
+  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+  color: #00e6e6;
+}
+
+
+/* --- Global Font & Background (in src/styles.css) --- */
+/*
+// Make sure your src/styles.css has these for consistency
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+html, body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212; // Matching the --bg-dark variable
+    color: #E0FFFF; // Matching the --text-light variable
+}
+*/
+/* --- Add Poppins to Global Styles if not already --- */
+/* In your src/styles.css, ensure Poppins is imported and applied: */
+/*
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+html, body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #282828; // Ensure consistent background
+    color: #e0e0e0;
+}
+*/
+/* Ensure the main container for the card remains centered on the page */
+/* The key fixes were applying text-align: center to the card and form, but leaving input-group as text-align: left */
+/* ... (rest of your register.css file) ... */

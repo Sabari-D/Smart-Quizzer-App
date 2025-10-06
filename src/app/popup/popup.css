@@ -1,0 +1,51 @@
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Position at the top */
+  padding-top: 5%;
+  z-index: 1000;
+}
+
+.popup-card {
+  background: #1a023f;
+  padding: 25px 35px;
+  border-radius: 10px;
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+  border: 2px solid;
+  border-image: linear-gradient(45deg, #00ffff, #ff00ff) 1;
+  box-shadow: 0 0 15px #00ffff, 0 0 30px #ff00ff;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.popup-card p {
+  margin: 0 0 20px 0;
+}
+
+.popup-card button {
+  padding: 8px 25px;
+  border: 1px solid #00ffff;
+  background: transparent;
+  color: #00ffff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.popup-card button:hover {
+  background: #00ffff;
+  color: #1a023f;
+  box-shadow: 0 0 15px #00ffff;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

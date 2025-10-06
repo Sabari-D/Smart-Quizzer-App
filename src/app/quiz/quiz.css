@@ -1,0 +1,201 @@
+/* =============================
+   Pink Neon Quiz - Dark Theme 🌌
+   ============================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at center, #0a0a0a 40%, #000000 100%);
+  min-height: 100vh;
+  color: #fff;
+}
+
+/* Center the quiz card */
+.quiz-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+/* Neon quiz card */
+.quiz-card {
+  background: #0d0d0d;
+  border-radius: 20px;
+  padding: 40px;
+  width: 100%;
+  max-width: 700px;
+  box-shadow: 0 0 25px rgba(255, 20, 147, 0.5);
+  border: 2px solid #ff1493;
+  animation: pulseBorder 2s infinite;
+  transition: transform 0.3s ease;
+}
+
+.quiz-card:hover {
+  transform: scale(1.02);
+}
+
+/* Neon pulse border animation */
+@keyframes pulseBorder {
+  0% {
+    box-shadow: 0 0 20px #ff69b4, 0 0 40px #ff1493;
+  }
+  50% {
+    box-shadow: 0 0 35px #ff69b4, 0 0 70px #ff1493;
+  }
+  100% {
+    box-shadow: 0 0 20px #ff69b4, 0 0 40px #ff1493;
+  }
+}
+
+/* Title */
+.quiz-title {
+  text-align: center;
+  color: #ff69b4;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+  text-shadow: 0 0 15px #ff69b4;
+}
+
+/* Progress text */
+.progress {
+  font-size: 1.1rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffb6d1;
+}
+
+/* Question styling */
+.question-display {
+  margin-bottom: 25px;
+}
+
+.question-text {
+  font-size: 1.2rem;
+  color: #f1f1f1;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+/* Option groups */
+.options-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.option-item {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 20, 147, 0.1);
+  border: 1px solid rgba(255, 105, 180, 0.4);
+  border-radius: 12px;
+  padding: 10px 14px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.option-item:hover {
+  background: rgba(255, 105, 180, 0.2);
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.6);
+  transform: scale(1.02);
+}
+
+/* Inputs */
+input[type="radio"],
+input[type="checkbox"] {
+  accent-color: #ff69b4;
+  transform: scale(1.2);
+  margin-right: 12px;
+  cursor: pointer;
+}
+
+/* Option labels */
+.option-label {
+  font-size: 1rem;
+  color: #fdfdfd;
+  cursor: pointer;
+}
+
+/* Textarea for input questions */
+.input-answer-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input-answer-group label {
+  font-weight: 500;
+  color: #ff69b4;
+}
+
+.input-answer-group textarea {
+  resize: none;
+  border: 2px solid #ff69b4;
+  border-radius: 12px;
+  padding: 10px;
+  background: #1a1a1a;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+.input-answer-group textarea:focus {
+  box-shadow: 0 0 15px #ff69b4;
+  border-color: #ff1493;
+}
+
+/* Multi-select label */
+.multi-select-label {
+  color: #ff69b4;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+/* Next button */
+.action-btn {
+  display: block;
+  width: 100%;
+  background: #ff1493;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.action-btn:hover:not(:disabled) {
+  background: #ff69b4;
+  box-shadow: 0 0 25px #ff69b4;
+  transform: scale(1.03);
+}
+
+/* Disabled button */
+.action-btn:disabled {
+  background: #66334d;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Status messages */
+.status-message {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.status-message.success {
+  color: #ff69b4;
+  text-shadow: 0 0 10px #ff1493;
+}

@@ -1,0 +1,5 @@
+<div *ngIf="isVisible" class="popup-overlay">
+  <div class="popup-card" [class.error]="isError"> <p>{{ message }}</p>
+    <button (click)="closePopup()">Close</button>
+  </div>
+</div>

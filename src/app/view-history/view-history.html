@@ -1,0 +1,144 @@
+<!-- <div class="history-container">
+    <div class="history-card wide-card">
+        <h2 class="title dashboard-title">
+            {{ username }}'s Learning Dashboard
+        </h2>
+
+        <div *ngIf="loading" class="loading-spinner">Loading Quiz History...</div>
+        <div *ngIf="errorMessage" class="alert alert-error">{{ errorMessage }}</div>
+
+        <div *ngIf="!loading">
+            
+            <div *ngIf="historyRecords.length === 0" class="empty-state">
+                <p class="text-center">No quiz history found yet. Start your first quiz!</p>
+            </div>
+            
+            <div *ngIf="historyRecords.length > 0" class="dashboard-content">
+                <div class="summary-box">
+                    <p class="summary-status">{{ getImprovementStatus(historyRecords) }}</p>
+                    <p>Total Quizzes Taken: <strong>{{ historyRecords.length }}</strong></p>
+                </div>
+
+                <h3>Past Quiz Sessions:</h3>
+                <table class="history-table">
+                    <thead>
+                        <tr>
+                            <th>Topic</th>
+                            <th>Difficulty</th>
+                            <th>Score</th>
+                            <th>Date</th>
+                            <th>Review</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let session of historyRecords">
+                            <td>{{ session.topic }}</td>
+                            <td>{{ session.difficulty }}</td>
+                            <td [class.score-pass]="session.score / session.total >= 0.7">
+                                <strong>{{ session.score }} / {{ session.total }}</strong>
+                            </td>
+                            <td>{{ session.completed_at | date: 'short' }}</td>
+                            <td>
+                                <button class="btn btn-sm btn-link">View Details</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <a [routerLink]="['/topic-selection']" class="action-btn retry-btn full-width-btn">Back to Quiz Selection</a>
+    </div>
+</div> -->
+
+
+
+
+
+
+ <div class="history-container">
+ <div class="history-card wide-card">
+        <h2 class="title dashboard-title">
+            {{ username }}'s Performance Dashboard
+        </h2>
+        
+        <button class="btn back-button" (click)="goBack()">
+            <i class="icon-arrow-left"></i> Back to Last Quiz
+        </button>
+
+        <div *ngIf="loading" class="loading-spinner">Loading Performance Data...</div>
+        <div *ngIf="errorMessage" class="alert alert-error">{{ errorMessage }}</div>
+
+        <div *ngIf="!loading">
+            
+            <div *ngIf="historyRecords.length === 0" class="empty-state">
+                <p class="text-center">No quiz history found yet. Start your first quiz!</p>
+            </div>
+            
+            <div *ngIf="historyRecords.length > 0" class="dashboard-content">
+                
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <p class="stat-label">Total Attempts</p>
+                        <p class="stat-value">{{ totalQuizzes }}</p>
+                    </div>
+                    <div class="stat-box">
+                        <p class="stat-label">Overall Average Score</p>
+                        <p class="stat-value">{{ averageScorePercent }}%</p>
+                    </div>
+                </div>
+                
+                <div class="summary-box" 
+                     [class.improving]="performanceChange.status === 'improving'"
+                     [class.declining]="performanceChange.status === 'declining'">
+                    
+                    <p class="summary-status">
+                        Performance Trend: 
+                        <span [class.positive]="performanceChange.percentage > 0">{{ performanceChange.status | uppercase }}</span>
+                    </p>
+                    <p class="quote-text">{{ performanceChange.quote }}</p>
+                    
+                    <p *ngIf="performanceChange.percentage > 0">
+                        Score change since first attempt: 
+                        <strong class="percent-value">{{ performanceChange.percentage }}%</strong>
+                    </p>
+                </div>
+
+                <h3 class="chart-header">Past Quiz Sessions:</h3>
+                <table class="history-table">
+                    <thead>
+                        <tr>
+                            <th>Quiz ID</th>
+                            <th>Topic</th>
+                            <th>Difficulty</th>
+                            <th>Score</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let session of historyRecords">
+                            <td>#{{ session.id }}</td>
+                            <td>{{ session.topic }}</td>
+                            <td>{{ session.difficulty }}</td>
+                            <td [class.score-pass]="session.score / session.total >= 0.7">
+                                <strong>{{ session.score }} / {{ session.total }}</strong>
+                            </td>
+                            <td>{{ session.completed_at | date: 'short' }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <a [routerLink]="['/topic-selection']" class="action-btn retry-btn full-width-btn">Start a New Quiz</a>
+    </div> 
+</div> 
+ 
+
+
+
+
+
+
+
+

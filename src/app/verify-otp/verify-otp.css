@@ -1,0 +1,135 @@
+/* --- Global Variables (for consistency) --- */
+:root {
+    --neon-blue: #00FFFF;
+    --text-light: #E0FFFF;
+    --bg-dark: #121212;
+    --card-dark: #0a0a0a;
+    --error-red: #FF6B8B;
+    --success-green: #4AFFDE;
+}
+
+/* --- Base Container (Centers the Card) --- */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--bg-dark); 
+    font-family: 'Poppins', sans-serif; 
+    padding: 20px;
+}
+
+/* --- The Verification Card (Matches Login/Register Size and Glow) --- */
+.login-card {
+    width: 100%;
+    max-width: 340px; 
+    padding: 35px 30px; 
+    background-color: var(--card-dark); 
+    border-radius: 10px; 
+    position: relative;
+    text-align: center;
+    color: var(--text-light);
+    
+    /* Strong, uniform, sharp neon blue outer glow */
+    box-shadow: 
+        0 0 0 2px var(--neon-blue), 
+        0 0 15px rgba(0, 255, 255, 0.4); 
+    
+    border: none;
+    animation: fadeInScale 0.6s ease-out; 
+}
+
+/* --- Title and Info --- */
+.title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: var(--neon-blue); 
+    text-shadow: 0 0 10px var(--neon-blue), 0 0 20px rgba(0, 255, 255, 0.6); 
+}
+
+.status-info {
+    margin-bottom: 25px;
+    padding: 10px;
+    border-radius: 5px;
+    background: rgba(0, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+.note {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin: 5px 0;
+    text-align: center;
+}
+
+/* --- Input Fields: Rectangular Glowing Box --- */
+.input-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+.input-group label { color: var(--text-light); }
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: var(--card-dark);
+    border: none; 
+    border-radius: 5px; 
+    color: var(--text-light);
+    font-size: 1rem;
+    box-sizing: border-box;
+    outline: none;
+    
+    box-shadow: 
+        0 0 0 2px var(--neon-blue), 
+        0 0 10px rgba(0, 255, 255, 0.4); 
+    
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    box-shadow: 0 0 0 2px var(--neon-blue), 0 0 15px rgba(0, 255, 255, 0.7); 
+}
+
+/* --- Button: Glowing and Blinking --- */
+.action-btn.login-btn {
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 1.15rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: var(--neon-blue); 
+    color: var(--card-dark); 
+    
+    box-shadow: 0 0 15px var(--neon-blue), 0 0 30px var(--neon-blue);
+    animation: buttonBlink 1.5s infinite alternate ease-in-out; 
+    transition: all 0.3s ease;
+}
+
+/* --- Error/Success Messages --- */
+.success-message { color: var(--success-green); text-shadow: 0 0 5px var(--success-green); }
+.error-message { color: var(--error-red); text-shadow: 0 0 5px var(--error-red); }
+
+/* --- Back Link --- */
+.back-link {
+    display: block;
+    margin-top: 30px;
+    font-size: 0.95rem;
+    color: var(--text-light); 
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Keyframe Animations (Required) */
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.9) translateY(20px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes buttonBlink {
+    0% { box-shadow: 0 0 15px var(--neon-blue), 0 0 30px var(--neon-blue); }
+    100% { box-shadow: 0 0 25px var(--neon-blue), 0 0 45px rgba(0, 255, 255, 0.7); }
+}

@@ -1,0 +1,111 @@
+<!-- <div class="login-card">
+  <h2 class="title">Login</h2>
+  <form class="login-form">
+    <div class="input-group">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" placeholder="Enter your username" required>
+    </div>
+    <div class="input-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password" required>
+    </div>
+    <p class="note">All fields are compulsory.</p>
+    <button type="submit" class="action-btn login-btn">Login</button>
+  </form>
+  <a class="back-link" (click)="goBack()">Go Back</a>
+</div> -->
+
+
+<!-- <div class="login-container">
+    <div class="login-card">
+        <h2 class="title">Login</h2>
+        
+        <form class="login-form" (ngSubmit)="onLoginSubmit()" #loginForm="ngForm">
+            
+            <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input 
+                    type="text" 
+                    id="username" 
+                    name="username" 
+                    placeholder="Enter your username" 
+                    [(ngModel)]="loginData.username" 
+                    required>
+            </div>
+            
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    placeholder="Enter your password" 
+                    [(ngModel)]="loginData.password" 
+                    required>
+            </div>
+            
+            <p class="note">All fields are compulsory.</p>
+            
+            <button 
+                type="submit" 
+                class="action-btn login-btn"
+                
+                [disabled]="loading || loginForm.invalid">
+                <span *ngIf="!loading">Login</span>
+                <span *ngIf="loading">Logging In...</span>
+            </button>
+        </form>
+        
+        <a class="back-link" (click)="goBack()">Go Back</a>
+    </div>
+</div> -->
+
+<div class="login-container">
+    <div class="login-card">
+        <h2 class="title">Login</h2>
+        
+        <form class="login-form" (ngSubmit)="onLoginSubmit()" #loginForm="ngForm">
+            
+            <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input 
+                    type="text" 
+                    id="username" 
+                    name="username" 
+                    placeholder="Enter your username" 
+                    [(ngModel)]="loginData.username" 
+                    required>
+            </div>
+            
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    placeholder="Enter your password" 
+                    [(ngModel)]="loginData.password" 
+                    required>
+            </div>
+            
+            <p class="note">All fields are compulsory.</p>
+            
+            <button 
+                type="submit" 
+                class="action-btn login-btn"
+                [disabled]="loading || loginForm.invalid">
+                <span *ngIf="!loading">Login</span>
+                <span *ngIf="loading">Logging In...</span>
+            </button>
+            
+            <a [routerLink]="['/forgot-password']" class="forgot-link">Forgot Password?</a>
+
+        </form>
+        
+        <a class="back-link" (click)="goBack()">Go Back</a>
+    </div>
+</div>
