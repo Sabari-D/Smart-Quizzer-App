@@ -1,0 +1,150 @@
+/* =====================
+   Topic Selection Styling
+===================== */
+
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #000428, #004e92);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+/* Container */
+.selection-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Card */
+.selection-card {
+  width: 500px;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #0ff, 0 0 40px #0ff;
+  text-align: center;
+}
+
+/* Title */
+.selection-card h2 {
+  margin-bottom: 25px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #0ff;
+  text-shadow: 0 0 10px #0ff;
+}
+
+/* Input Group */
+.input-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* Labels */
+.input-group label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #0ff;
+  font-weight: 500;
+}
+
+/* Inputs, Selects, and Textarea */
+.input-group input,
+.input-group select,
+.input-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #0ff;
+  background: rgba(0, 0, 0, 0.7); /* Dark background for all fields */
+  color: #fff;
+  font-size: 15px;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.3s ease;
+  box-shadow: 0 0 5px #0ff;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Select (Dropdown) specific */
+.input-group select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+
+  /* Custom arrow */
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%2300ffff' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 18px;
+  padding-right: 40px; /* space for arrow */
+}
+
+/* Dropdown options */
+.input-group select option {
+  background: #111; /* Dark background */
+  color: #fff; /* White text */
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Focus Effect */
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
+  border-color: #fff;
+  box-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+}
+
+/* Textarea specific */
+.input-group textarea {
+  resize: none;
+}
+
+/* Error Message */
+.error-message {
+  color: #ff4d4d;
+  font-size: 14px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Generate Button */
+.generate-btn {
+  width: 100%;
+  padding: 12px;
+  background: #0ff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+  color: #000;
+  font-family: 'Poppins', sans-serif;
+}
+
+.generate-btn:hover {
+  background: #00e6e6;
+  box-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+}
+
+/* Disabled Button */
+.generate-btn:disabled {
+  background: #444;
+  cursor: not-allowed;
+  color: #888;
+  box-shadow: none;
+}

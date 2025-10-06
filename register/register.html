@@ -1,0 +1,26 @@
+<div class="register-card">
+    <h2 class="title">Register</h2>
+    <form class="register-form" (ngSubmit)="onRegisterSubmit()">
+        <div class="input-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required [(ngModel)]="username">
+        </div>
+        
+        <div class="input-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email for recovery" required [(ngModel)]="email">
+        </div>
+        
+        <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required [(ngModel)]="password">
+        </div>
+        <div class="input-group">
+            <label for="confirm-password">Confirm Password</label>
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required [(ngModel)]="confirmPassword">
+        </div>
+        <p class="note">All fields are compulsory.</p>
+        <button type="submit" class="action-btn register-btn">Register</button>
+    </form>
+    <a class="back-link" (click)="goBack()">Go Back</a>
+</div>

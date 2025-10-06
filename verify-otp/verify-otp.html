@@ -1,0 +1,39 @@
+<div class="login-container">
+    <div class="login-card">
+        <h2 class="title">Verify Security Code</h2>
+        
+        <form class="login-form" (ngSubmit)="onVerifyCode()" #otpForm="ngForm">
+            
+            <p *ngIf="message" class="success-message">{{ message }}</p>
+            <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+
+            <div class="status-info">
+                <p class="note">A 6-digit code has been sent to {{ identifier }}</p>
+                <p class="note">You have 10 minutes to enter the code.</p>
+            </div>
+
+            <div class="input-group">
+                <label for="otp">Enter 6-Digit Code</label>
+                <input 
+                    type="text" 
+                    id="otp" 
+                    name="otp" 
+                    placeholder="123456" 
+                    [(ngModel)]="otpCode" 
+                    maxlength="6"
+                    required>
+            </div>
+            
+            <button 
+                type="submit" 
+                class="action-btn login-btn"
+                [disabled]="loading || otpForm.invalid">
+                <span *ngIf="!loading">Verify Code</span>
+                <span *ngIf="loading">Verifying...</span>
+            </button>
+            
+        </form>
+        
+        <a class="back-link" (click)="goBack()">Go Back</a>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="app-container">
+  <header class="page-header">
+    <h1 class="main-title">Smart Quizzer</h1>
+    <p class="subtitle">Adaptive AI-based Quiz Generator</p>
+    <p class="quote">"Believe you can and you're halfway there."</p>
+  </header>
+  <main class="app-main-content">
+    <router-outlet></router-outlet>
+  </main>
+  <app-popup 
+  [isVisible]="popupVisible" 
+  [message]="popupMessage" 
+  (close)="hidePopup()">
+</app-popup>
+</div>
